@@ -1,17 +1,3 @@
-**Lab 3: Automating EC2 Instance Management with Python**
-
-**Objective**:
-Create Python scripts to start, stop, and monitor EC2 instances.
-
-**Tasks**:
-1. Write a script to start/stop an EC2 instance.
-2. Extend the script to monitor CPU utilization.
-
-
-
-
-
-
 import boto3
 import time
 
