@@ -1,0 +1,37 @@
+FROM ubuntu:22.04
+
+# Prevent interactive prompts during package installation
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Update package lists and install packages using RUN
+RUN apt-get update && apt-get install -y openssh-server python3 && rm -rf /var/lib/apt/lists/*
+
+RUN useradd -m -s /bin/bash ansible
+
+RUN mkdir -p /home/ansible/.ssh 
+
+RUN chmod 700 /home/ansible/.ssh
+RUN touch /home/ansible/.ssh/authorized_keys
+RUN chmod 600 /home/ansible/.ssh/authorized_keys &&  chown -R ansible:ansible /home/ansible/.ssh
+
+#COPY id_rsa_ansible.pub /home/ansible/.ssh/authorized_keys/
+COPY id_rsa_ansible.pub /home/ansible/.ssh/authorized_keys
+
+RUN chown ansible:ansible /home/ansible/.ssh/authorized_keys
+# Set up the SSH directory (required for sshd to start)
+
+COPY sshd_config /etc/ssh/sshd_config
+
+RUN mkdir /var/run/sshd
+
+# Expose the SSH port
+EXPOSE 22
+
+# Define the command to start the service
+CMD ["/usr/sbin/sshd", "-D"]
+
+#RUN systemctl status ssh 
+RUN python3 --version
+
+
+
