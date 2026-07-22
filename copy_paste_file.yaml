@@ -1,0 +1,26 @@
+---
+- name: Copy and Paste Files Template
+  hosts: all
+  become: true
+  vars:
+    destination_path: "/tmp/my_copied_file.txt"
+
+  tasks:
+    - name: Option A - Copy an existing file from control node to remote host
+      ansible.builtin.copy:
+        src: /home/$USER/file.txt
+        dest: "{{ destination_path }}"
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Option B - Paste raw multi-line text content directly into a remote file
+      ansible.builtin.copy:
+        content: |
+          Line 1: This is raw pasted content.
+          Line 2: Perfect for small config files.
+        dest: "/tmp/my_pasted_file.txt"
+        owner: root
+        group: root
+        mode: '0644'
+
