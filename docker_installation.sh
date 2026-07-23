@@ -22,7 +22,7 @@ sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin dock
 sudo systemctl status docker
 
 sudo systemctl start docker
-
+##This Step We are adding docker user into SUDO group to run the commmands without sudo
 sudo groupadd docker
 
 sudo usermod -aG docker $USER
