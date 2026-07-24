@@ -17,3 +17,10 @@ chmod u-wx /home/$USER/test_file
 chown user:user /home/$USER/test-me.txt
 chown user user1 /home/$USER/test-me.txt
 
+export passwd="PASSWORD@12345"
+echo $passwd
+unset passwd
+
+alias l='ls -ltrh'
+unalias l
+
