@@ -1,0 +1,19 @@
+du -sh
+du -ah
+du -sh | sort -hr
+du -ah | sort -hr
+useradd pc1 
+userdel pc1
+useradd -m --home-dir /home/pc1 pc1
+userdel -r pc1
+df -h
+free -m 
+free -mh
+chmod g+rwx /home/$USER/test_file
+chmod u+rwx /home/$USER/test_file
+chmod g-wx /home/$USER/test_file
+chmod u-wx /home/$USER/test_file
+
+chown user:user /home/$USER/test-me.txt
+chown user user1 /home/$USER/test-me.txt
+
