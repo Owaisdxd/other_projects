@@ -58,3 +58,19 @@ sudo ufw enable
 sudo ufw app list
 sudo ufw allow ssh
 sudo ufw deny ssh
+
+
+lsblk
+sudo cfdisk /dev/sda
+mkfs.ext4 /mnt/test_me
+mount /dev/sdb1 /mnt/test_me
+umount /mnt/test_me
+
+free -h
+sudo fallocate -l 1G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+sudo swapon --show
+echo "/swapfile none swap sw 0 0" >> /etc/fstab
+
