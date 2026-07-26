@@ -36,3 +36,8 @@ sed -i '/Universe/d' example.txt
 awk '{print $1, $3}' data.txt
 awk '$2 > 25 {print $0}' data.txt
 
+find ~ -name "*.txt"
+find /home/$USER/Desktop -name ".txt"
+find /home/$USER/Desktop -name "*.txt" -exec wc -l \;
+find /home/$USER/Desktop -size +2M 
+find //home/$USER/Desktop -size +2M -exec rm -rf \;
