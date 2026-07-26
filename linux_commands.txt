@@ -40,4 +40,7 @@ find ~ -name "*.txt"
 find /home/$USER/Desktop -name ".txt"
 find /home/$USER/Desktop -name "*.txt" -exec wc -l \;
 find /home/$USER/Desktop -size +2M 
-find //home/$USER/Desktop -size +2M -exec rm -rf \;
+find /home/$USER/Desktop -size +2M -exec rm -rf \;
+
+less /var/log/syslog
+tail -f /var/log/syslog
