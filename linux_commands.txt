@@ -44,3 +44,17 @@ find /home/$USER/Desktop -size +2M -exec rm -rf \;
 
 less /var/log/syslog
 tail -f /var/log/syslog
+
+
+systemctl list-units --type=service
+systemctl status ssh
+systemctl stop ssh
+systemctl disable ssh
+systemctl status ssh
+systemctl enable ssh
+systemctl start ssh
+
+sudo ufw enable
+sudo ufw app list
+sudo ufw allow ssh
+sudo ufw deny ssh
