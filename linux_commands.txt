@@ -27,6 +27,10 @@ unalias l
 grep -i "hello" filename.txt
 grep  "hello" filename.txt
 grep -A 1 -B 1 "nice" filename.txt
+grep "^a" filename.txt
+grep "y$"  filename.txt
+grep "myna$e" filename.txt
+
 
 sed 's/World/Earth/g' example.txt
 sed -i 's/World/Earth/g' example.txt
