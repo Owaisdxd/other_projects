@@ -23,8 +23,10 @@ export passwd="PASSWORD@12345"
 echo $passwd
 unset passwd
 
+alias update='sudo apt update && apt upgrade'
 alias l='ls -ltrh'
 unalias l
+source ~/.bashrc
 
 grep -i "hello" filename.txt
 grep  "hello" filename.txt
