@@ -2,6 +2,8 @@ du -sh
 du -ah
 du -sh | sort -hr
 du -ah | sort -hr
+sudo du -sh /home/os/* | sort -hr | head -n 10
+
 useradd pc1 
 userdel pc1
 useradd -m --home-dir /home/pc1 pc1
@@ -80,4 +82,5 @@ echo "/swapfile none swap sw 0 0" >> /etc/fstab
 
 wget https://to_download_the_file
 curl https://example.com -o webpage.html
+uptime
 
