@@ -1,3 +1,5 @@
+Below Are the Commands I used on my day to day
+
 du -sh
 du -ah
 du -sh | sort -hr
