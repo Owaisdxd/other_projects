@@ -44,13 +44,13 @@ grep "^a" filename.txt
 grep "y$"  filename.txt
 grep "myna$e" filename.txt
 
-
+#Using Sed Command
 sed 's/World/Earth/g' example.txt
 sed -i 's/World/Earth/g' example.txt
 sed '/Universe/d' example.txtx
 sed -i '/Universe/d' example.txt
 
-
+#Using awk command
 awk '{print $1, $3}' data.txt
 awk '$2 > 25 {print $0}' data.txt
 
