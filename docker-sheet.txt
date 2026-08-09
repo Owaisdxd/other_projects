@@ -9,3 +9,6 @@ docker run container /bin/bash
 docker images ls
 docker history images-name
 docker run -e MYVAR="My Environment value"
+docker volume create name-of-the-volume
+docker run --name volcontainer -v name-of-the-volume:/data -d alpine sh -c "echo 'Hello World' > /data/hello.txt"
+docker run --rm -v name-of-the-volume:/data alpine cat /data/hello.txt
