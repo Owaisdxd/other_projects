@@ -25,3 +25,7 @@ docker exec container1 apk add --no-cache iputils
 docker exec container2 apk add --no-cache iputils
 docker exec container1 ping -c 3 container2_IP
 docker rm -f container1 container2
+docker network create mynet
+docker run -d --name container1 --network mynet nginx
+docker run -d --name container2 --network mynet nginx
+
