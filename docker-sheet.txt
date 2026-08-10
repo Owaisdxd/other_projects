@@ -14,3 +14,14 @@ docker run --name volcontainer -v name-of-the-volume:/data -d alpine sh -c "echo
 docker run --rm -v name-of-the-volume:/data alpine cat /data/hello.txt
 docker rm -f volcontainer
 docker rm -f volcontainer
+##Docker Networking
+docker run -d --name container1 alpine sleep 1000
+docker run -d --name container2 alpine sleep 1000
+docker inspect container1
+docker inspect container2
+docker inspect container1 | grep IPAddress
+docker inspect container2 | grep IPAddress
+docker exec container1 apk add --no-cache iputils
+docker exec container2 apk add --no-cache iputils
+docker exec container1 ping -c 3 container2_IP
+docker rm -f container1 container2
