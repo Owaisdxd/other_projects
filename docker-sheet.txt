@@ -28,4 +28,6 @@ docker rm -f container1 container2
 docker network create mynet
 docker run -d --name container1 --network mynet nginx
 docker run -d --name container2 --network mynet nginx
-
+docker compose version
+docker compose up
+docker compose down 
