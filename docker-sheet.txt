@@ -31,3 +31,12 @@ docker run -d --name container2 --network mynet nginx
 docker compose version
 docker compose up
 docker compose down 
+docker image prune
+docker image prune -a
+docker container prune 
+docker volume prune 
+docker volume ls
+docker system ps
+docker system prune
+docker system prune --all
+
