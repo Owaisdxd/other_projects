@@ -95,6 +95,7 @@ sudo swapon /swapfile
 sudo swapon --show
 echo "/swapfile none swap sw 0 0" >> /etc/fstab
 
+##Other Useful commands
 wget https://to_download_the_file
 curl https://example.com -o webpage.html
 uptime
