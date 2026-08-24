@@ -3,13 +3,15 @@
 ###Note Before You Proceed Please Backup The Data
 import os
 import time
+import logging
 
 def cleanup_old_files(directory, days_threshold):
     ####Convert days into seconds####
     seconds_threshold = days_threshold * 24 * 60 * 60
     ####Get The time####
     current_time = time.time()
-
+    # Configure logging
+    logging.basicConfig(filename='cleanup_log.txt', level=logging.INFO,format='%(asctime)s - %(levelname)s - %(message)s')
     deleted_files_count = 0 #Counter for deleted files
     for filename in os.listdir(directory):
         file_path = os.path.join(directory, filename)
@@ -23,6 +25,13 @@ def cleanup_old_files(directory, days_threshold):
                 print(f"Deleted: {file_path}")
                 deleted_files_count += 1
     return deleted_files_count
+    if file_age > seconds_threshold:
+            os.remove(file_path)
+            logging.info(f'Deleted: {file_path}')
+            print(f'Deleted: {file_path}')
+            deleted_files_count += 1
+    return deleted_files_count 
+
 
 if __name__ == '__main__':
     directory_old_files './sample_dir'
