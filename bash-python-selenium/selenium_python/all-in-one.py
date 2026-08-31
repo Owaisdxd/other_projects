@@ -8,7 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions as EC
 
 driver = webdriver.Chrome()
-driver.get("file:///home/os/Desktop/bash-python-selenium/selenium_python/selenium-practice-lab.html")
+driver.get("path to your html file / url that can be used in the script")
 wait = WebDriverWait(driver, 15)
 
 # --- locators
@@ -71,7 +71,7 @@ root.find_element(By.CSS_SELECTOR, "#shadow-input").send_keys("inside the shadow
 root.find_element(By.CSS_SELECTOR, "#shadow-button").click()
 
 # --- upload
-driver.find_element(By.ID, "file-upload").send_keys("/absolute/path/to/file.txt")
+driver.find_element(By.ID, "file-upload").send_keys("/absolute/path/to/sample.txt")
 
 # --- stale element
 old = driver.find_element(By.ID, "stale-box")
