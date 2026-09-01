@@ -1,0 +1,15 @@
+What is AI ?
+
+AI is thr process that mimics the same intelligence as human do and purpose of this is to do human by machine.
+
+What is DeepLearning ?
+
+it is subset of Machine Learning and in this ANN Artifical Neural Network to learn the complex pattern from the large data set
+
+What is ML ?
+
+This is the underneath of AI and it provides the ability to machine to learn and improved overtime with out the need to programmed it.
+
+
+
+
